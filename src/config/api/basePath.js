@@ -1,2 +1,2 @@
 
-export const BaseServerPath = 'http://localhost:4000';
+export const BaseServerPath = 'http://118.24.195.56:4000';

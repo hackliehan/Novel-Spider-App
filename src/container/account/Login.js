@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { r } from '../../utils/layout';
 import { postUrl } from 'wl-fetch';
 import { ACCOUNT_LOGIN } from '../../config/api/account.api';
-import { Toast } from '@ant-design/react-native';
+import { Toast, DatePicker } from '@ant-design/react-native';
 import { Portal } from '@ant-design/react-native';
 import { List, InputItem, Button } from '@ant-design/react-native';
 
@@ -13,7 +13,8 @@ export default class Login extends Component {
 
 		this.state = {
 			userName: '',
-			password: ''
+			password: '',
+			date:new Date()
 		};
 	}
 
@@ -61,6 +62,16 @@ export default class Login extends Component {
 					>
 						密码
 					</InputItem>
+					<DatePicker
+						value={this.state.date}
+						mode="date"
+						minDate={new Date(2015,7,6)}
+						maxDate={new Date(2026,11,20)}
+						onChange={val=>this.handleChange('date',val)}
+						format="YYYY-MM-DD"
+					>
+						<List.Item>选择日期</List.Item>
+					</DatePicker>
 					<List.Item>
 						<Button type="primary" onPress={() => this.handleDoLogin()}>
 							登录

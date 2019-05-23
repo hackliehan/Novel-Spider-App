@@ -17,7 +17,7 @@ const AppNavidator = createStackNavigator({
         })
     }
 },{
-    initialRouteName:'Account'
+    initialRouteName:'Book'
 });
 
 export default AppNavidator;
